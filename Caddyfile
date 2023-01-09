@@ -14,11 +14,11 @@
 		alpn h2 http/1.1
 	}
 
-	@tgrpc {
+	@grpc {
 		protocol grpc
 		path /grpc/*
 	}
-	reverse_proxy @tgrpc unix//dev/shm/grpc.sock {
+	reverse_proxy @grpc unix//dev/shm/grpc.sock {
 		transport http {
 			versions h2c 2
 		}
