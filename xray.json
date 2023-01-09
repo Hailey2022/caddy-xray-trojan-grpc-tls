@@ -1,0 +1,34 @@
+{
+   "log":{
+      "loglevel":"error",
+      "error":"/var/log/xray/error.log",
+      "access":"/var/log/xray/access.log"
+   },
+   "inbounds":[
+      {
+         "listen":"/dev/shm/grpc.sock",
+         "protocol":"trojan",
+         "settings":{
+            "clients":[
+               {
+                  "password":"password"
+               }
+            ]
+         },
+         "streamSettings":{
+            "network":"grpc",
+            "security":"none",
+            "grpcSettings":{
+               "serviceName":"grpc"
+            }
+         },
+         "sniffing":{
+            "enabled":true,
+            "destOverride":[
+               "http",
+               "tls"
+            ]
+         }
+      }
+   ]
+}
