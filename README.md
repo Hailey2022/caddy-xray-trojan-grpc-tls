@@ -17,5 +17,5 @@ vim /etc/caddy/Caddyfile
 systemctl restart caddy
 
 # make a fake website
-cd /var/www/html
+mkdir -p /var/www/html
 ```
